@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  palworld:
+    image: palworld
+    container_name: pal-penland
+    volumes:
+        - './Saved:/home/steam/Steam/steamapps/common/PalServer/Pal/Saved'
+    ports:
+        - '8211:8211/udp' 
