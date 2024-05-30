@@ -1,0 +1,16 @@
+[Unit]
+Description=Palworld Server
+After=multi-user.target
+
+[Service]
+User=ubuntu
+ExecStart=/home/ubuntu/Steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS
+#ExecStart=/home/ubuntu/Steam/steamapps/common/PalServer/PalServer.sh
+ExecStop=/home/ubuntu/StopPalServer.sh
+KillMode=process
+Restart=always
+Type=simple
+WorkingDirectory=/home/ubuntu/Steam/steamapps/common/PalServer
+
+[Install]
+WantedBy=multi-user.target
