@@ -9,6 +9,7 @@ death="${MOD_DEATH:-casual}"
 resources="${MOD_RESOURCES:-most}"
 raids="${MOD_RAIDS:-none}"
 portals="${MOD_PORTALS:-casual}"
+port="${SERVER_PORT:-2456}"
 
 export templdpath=$LD_LIBRARY_PATH  
 export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH  
@@ -34,6 +35,6 @@ echo "Starting server PRESS CTRL-C to exit"
     -modifier resources "${resources}" \
     -modifier raids "${raids}" \
     -modifier portals "${casual}" \
-    -port 2456 -nographics -batchmode -public 0
+    -port "${port}" -nographics -batchmode -public 0
 
 export LD_LIBRARY_PATH=$templdpath
