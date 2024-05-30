@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  valheim:
+    image: valheim
+    container_name: valheim
+    volumes:
+      - './data:/home/steam/data'
+    environment:
+      - SERVER_NAME
+      - WORLD_NAME
+      - WORLD_PASSWORD
+    ports:
+      - '2456:2456/udp' 
+      - '2457:2457/udp'
