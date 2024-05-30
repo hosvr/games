@@ -34,7 +34,7 @@ echo "Starting server PRESS CTRL-C to exit"
     -modifier deathpenalty "${death}" \
     -modifier resources "${resources}" \
     -modifier raids "${raids}" \
-    -modifier portals "${casual}" \
+    -modifier portals "${portals}" \
     -port "${port}" -nographics -batchmode -public 0
 
 export LD_LIBRARY_PATH=$templdpath
