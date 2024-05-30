@@ -9,10 +9,12 @@ curl \
     -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+useradd -m -G docker -u 2000 -s /bin/bash games
+cp -r /home/ec2-user/.ssh /home/games
+chown -R games:games /home/games
+
+git clone https://github.com/hosvr/games.git /repo
+chown -R games:games /repo
+
 systemctl enable docker
 systemctl start docker
-
-usermod -a -G docker ec2-user
-
-git clone https://github.com/hosvr/games.git /games
-chown -R ec2-user:ec2-user /games
